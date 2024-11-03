@@ -66,7 +66,6 @@
                 <li><strong>File Upload:</strong> Ensure relevant image files (e.g., logos, signatures) are uploaded before generating reports.</li>
             </ul>
         </div>
-        <p> Developed by Ernest Phiri</p>
     </div>
 </body>
 </html>
