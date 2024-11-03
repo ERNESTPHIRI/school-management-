@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/evs.css">
+    <title>View Student EOT Scores</title>
+</head>
+<body>
+    <h1>View Student EOT Scores</h1>
+    <form id="evs-form">
+        <label for="academicYr">Academic Year:</label>
+        <select id="academicYr" name="academicYr">
+            <option value="2024-2025">2024-2025</option>
+            <option value="2023-2024">2023-2024</option>
+        </select>
+
+        <label for="form">Form:</label>
+        <select id="form" name="form">
+            <option value="Form 1">Form 1</option>
+            <option value="Form 2">Form 2</option>
+            <option value="Form 3">Form 3</option>
+            <option value="Form 4">Form 4</option>
+        </select>
+
+        <label for="term">Term:</label>
+        <select id="term" name="term">
+            <option value="1">Term 1</option>
+            <option value="2">Term 2</option>
+            <option value="3">Term 3</option>
+        </select>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+            <option value="score_agriculture">Agriculture</option>
+            <option value="score_additional_math">Additional Math</option>
+            <option value="score_biology">Biology</option>
+            <option value="score_business_studies">Business Studies</option>
+            <option value="score_computer_studies">Computer Studies</option>
+            <option value="score_chichewa">Chichewa</option>
+            <option value="score_chemistry">Chemistry</option>
+            <option value="score_english">English</option>
+            <option value="score_geography">Geography</option>
+            <option value="score_history">History</option>
+            <option value="score_life_skills">Life Skills</option>
+            <option value="score_mathematics">Mathematics</option>
+            <option value="score_social_studies">Social Studies</option>
+            <option value="score_physics">Physics</option>
+            <option value="score_home_economics">Home Economics</option>
+        </select>
+
+        <button type="submit">View Scores</button>
+    </form>
+
+    <div id="results">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <script src="js/evs.js"></script>
+</body>
+</html>

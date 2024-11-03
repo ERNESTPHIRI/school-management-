@@ -1,0 +1,71 @@
+/* Main container for the form */
+.container {
+    width: 100%; /* Set width to 100% for full responsiveness */
+    max-width: 480px; /* Decrease the maximum width for smaller screens */
+    margin: auto; /* Center the container */
+    background-color: #f9f9f9; /* Light background for the form */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Reduced padding around the content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the form */
+form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Styling for each form group */
+.form-group {
+    display: flex; /* Flexbox layout for label and input */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 10px; /* Reduced space between form groups */
+}
+
+/* Styling for labels */
+label {
+    width: 100px; /* Set a smaller fixed width for labels */
+    margin-right: 5px; /* Reduced space between label and input */
+    font-weight: bold; /* Bold text for labels */
+    color: #333; /* Darker color for labels */
+}
+
+/* Styling for input fields, select boxes, and textareas */
+input, select, textarea {
+    flex: 1; /* Allows input elements to take the remaining space */
+    padding: 6px; /* Reduced padding inside the input fields */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Slightly smaller rounded corners for inputs */
+    font-size: 0.85em; /* Smaller font size for better fitting */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+/* Change border color on focus */
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Styling for error messages */
+.error {
+    color: red; /* Style for error messages */
+    font-size: 0.75em; /* Smaller font for errors */
+    margin-left: 10px; /* Space between input and error message */
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text */
+    padding: 8px; /* Reduced padding around button text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Smaller rounded corners for button */
+    font-size: 0.85em; /* Slightly smaller font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Change button background on hover */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

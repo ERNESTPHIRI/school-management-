@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Report</title>
+    <link rel="stylesheet" href="css/studentreport.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Performance Report</h1>
+        <form action="studentreport.php" method="GET">
+            <label for="academicYear">Academic Year:</label>
+            <select id="academicYear" name="academicYr" required>
+                <option value="2024-2025">2024-2025</option>
+                <option value="2025-2026">2025-2026</option>
+                <option value="2026-2027">2026-2027</option>
+            </select>
+
+            <label for="class">Class:</label>
+            <select id="class" name="form" required>
+                <option value="Form 1">Form 1</option>
+                <option value="Form 2">Form 2</option>
+                <option value="Form 3">Form 3</option>
+                <option value="Form 4">Form 4</option>
+            </select>
+
+            <label for="term">Term:</label>
+            <select id="term" name="term" required>
+                <option value="Term 1">Term 1</option>
+                <option value="Term 2">Term 2</option>
+                <option value="Term 3">Term 3</option>
+            </select>
+
+            <label for="regNo">Registration Number:</label>
+            <input type="text" id="regNo" name="regNo" required>
+
+            <button type="submit">Create Student Report</button>
+        </form>
+    </div>
+</body>
+</html>

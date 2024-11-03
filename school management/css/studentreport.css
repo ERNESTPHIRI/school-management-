@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+}
+
+.report {
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.header {
+    text-align: center;
+    padding-left: 100px; /* Adds space for the logo on the left */
+    position: relative;
+    padding-top: 20px;
+}
+
+.school-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+}
+
+/* Title */
+h3 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Flex container for student information */
+.details, .academic-info, .evaluate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Font size adjustments for text outside the table */
+.details p, .academic-info p, .evaluate p, .signature p, .stamp p {
+    font-size: 0.9em; /* Smaller font size */
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px; /* Font size specifically for table content */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f5f5f5;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+/* Signature section layout */
+.signatures, .signature, .stamp {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.signature-img, .stamp-img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Additional styling for print */
+@media print {
+    button {
+        display: none;
+    }
+    .report {
+        border: none;
+        padding: 0;
+    }
+    .header, .details, .academic-info, .evaluate, table {
+        page-break-inside: avoid;
+    }
+}

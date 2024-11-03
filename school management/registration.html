@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/formteacher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Student Registration</title>
+</head>
+<body>
+
+
+    <div id="notificationPopup" style="display: none;">
+        <span class="close-popup">&times;</span>
+        <p>Registration successful!</p>
+    </div>
+    
+
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Form Teacher</h2>
+        </div>
+        <ul class="menu-list">
+            <li>
+                <a href="formteacher.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="viewstudents.html">
+                    <i class="fas fa-users"></i>
+                    <span>Manage Classes</span>
+                </a>
+            </li>
+            <li>
+                <a href="registration.html"> 
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Register Student</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="performanceLink">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Performance</span>
+                </a>
+            </li>
+            <li>
+                <a href="rank.html" id="communicationLink">
+                    <i class="fas fa-envelope"></i>
+                    <span>Rank student</span>
+                </a>
+            </li>
+            <li>
+                <a href="studentreport.html" id="resourcesLink">
+                    <i class="fas fa-book"></i>
+                    <span>Student School Report</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1 id="welcomeMessage">Register your class students for this term!</h1>
+       
+
+    <div class="container">
+        <form id="registrationForm" method="POST" action="registration.php">
+    
+            <div class="form-group">
+                <label for="regNo">Registration No:</label>
+                <input type="text" id="regNo" name="regNo" required>
+                <span class="error" id="regNoError"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span class="error" id="fullNameError"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <span class="error" id="dobError"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{9}" placeholder="9 digits minus 0" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="countryCode">Country Code:</label>
+                <select id="countryCode" name="countryCode">
+                    <option value="+265">Malawi (+265)</option>
+                    <option value="+1">USA (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <!-- Add other country codes as needed -->
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="form">Form:</label>
+                <select id="form" name="form" required>
+                    <option value="Form 1">Form 1</option>
+                    <option value="Form 2">Form 2</option>
+                    <option value="Form 3">Form 3</option>
+                    <option value="Form 4">Form 4</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="term">Term:</label>
+                <select id="term" name="term" required>
+                    <option value="Term 1">Term 1</option>
+                    <option value="Term 2">Term 2</option>
+                    <option value="Term 3">Term 3</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="academicYr">Academic Year:</label>
+                <select id="academicYr" name="academicYr" required>
+                    <option value="2024-2025">2024-2025</option>
+                    <option value="2025-2026">2025-2026</option>
+                    <option value="2026-2027">2026-2027</option>
+                    <option value="2027-2028">2027-2028</option>
+                    <option value="2028-2029">2028-2029</option>
+                    <option value="2029-2030">2029-2030</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="guardian">Guardian Name:</label>
+                <input type="text" id="guardian" name="guardian" required>
+                <span class="error" id="guardianError"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="address1">Postal Address:</label>
+                <input type="text" id="address1" name="address1" required>
+                <span class="error" id="address1Error"></span>
+            </div>
+    
+            <div class="form-group">
+                <label for="address2">Physical Address:</label>
+                <textarea id="address2" name="address2" required></textarea>
+                <span class="error" id="address2Error"></span>
+            </div>
+    
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="js/registration.js"></script>
+    <script src="js/formteacher.js"></script>
+
+</body>
+</html>

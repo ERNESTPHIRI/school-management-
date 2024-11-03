@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End of Term Scores</title>
+    <link rel="stylesheet" href="css/eots.css">
+</head>
+<body>
+
+
+    <!-- Form for fetching student details -->
+     <div><h1>End of Term Scores</h1></div>
+    <form id="student-form">
+        
+        <div class="form-group">
+            <label for="academic_year">Academic Year:</label>
+            <select id="academic_year">
+                <option value="2024-2025">2024-2025</option>
+                <option value="2025-2026">2025-2026</option>
+                <option value="2026-2027">2026-2027</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="form">Form:</label>
+            <select id="form">
+                <option value="Form 1">Form 1</option>
+                <option value="Form 2">Form 2</option>
+                <option value="Form 3">Form 3</option>
+                <option value="Form 4">Form 4</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="term">Term:</label>
+            <select id="term">
+                <option value="Term 1">Term 1</option>
+                <option value="Term 2">Term 2</option>
+                <option value="Term 3">Term 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="regNo">Reg No:</label>
+            <input type="text" id="regNo">
+        </div>
+
+        <button type="button" id="get-student">Get Student</button>
+    </form>
+
+    <!-- Section for displaying student information -->
+    <div id="student-info"></div>
+
+    <!-- Form for submitting the student's score -->
+    <form id="score-form">
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <select id="subject">
+                <option value="score_agriculture">Agriculture</option>
+                <option value="score_additional_math">Additional Math</option>
+                <option value="score_biology">Biology</option>
+                <option value="score_business_studies">Business Studies</option>
+                <option value="score_computer_studies">Computer Studies</option>
+                <option value="score_chichewa">Chichewa</option>
+                <option value="score_chemistry">Chemistry</option>
+                <option value="score_english">English</option>
+                <option value="score_geography">Geography</option>
+                <option value="score_history">History</option>
+                <option value="score_life_skills">Life Skills</option>
+                <option value="score_mathematics">Mathematics</option>
+                <option value="score_social_studies">Social Studies</option>
+                <option value="score_physics">Physics</option>
+                <option value="score_home_economics">Home Economics</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="score">Score:</label>
+            <input type="number" id="score" min="0" max="100">
+        </div>
+
+        <button type="button" id="submit-score">Submit Score</button>
+    </form>
+
+    <script src="js/eots.js"></script>
+</body>
+</html>

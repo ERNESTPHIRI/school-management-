@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Scores</title>
+    <link rel="stylesheet" href="css/finalscore.css">
+</head>
+<body>
+    <h1>Final Scores</h1>
+    <form id="scoreForm">
+        <label for="academic_year">Academic Year:</label>
+        <select id="academic_year" name="academic_year">
+            <option value="2024-2025">2024-2025</option>
+            <option value="2025-2026">2025-2026</option>
+        </select>
+
+        <label for="form">Form:</label>
+        <select id="form" name="form">
+            <option value="1">Form 1</option>
+            <option value="2">Form 2</option>
+            <option value="3">Form 3</option>
+            <option value="4">Form 4</option>
+        </select>
+
+        <label for="term">Term:</label>
+        <select id="term" name="term">
+            <option value="Term 1">Term 1</option>
+            <option value="Term 2">Term 2</option>
+            <option value="Term 3">Term 3</option>
+        </select>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+            <option value="mathematics">Mathematics</option>
+            <option value="english">English</option>
+            <option value="biology">Biology</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="physics">Physics</option>
+            <option value="business_studies">Business Studies</option>
+            <option value="social_studies">Social Studies</option>
+            <option value="chichewa">Chichewa</option>
+            <option value="computer_studies">Computer Studies</option>
+            <option value="history">History</option>
+            <option value="geography">Geography</option>
+            <option value="life_skills">Life Skills</option>
+            <option value="home_economics">Home Economics</option>
+            <option value="additional_math">Additional Math</option>
+            <option value="agriculture">Agriculture</option>
+        </select>
+
+        <button type="button" id="getScores">Get Scores</button>
+        <button type="button" id="approveScores">Approve Scores</button>
+    </form>
+
+    <table id="scoreTable">
+        <thead>
+            <tr>
+                <th>Serial No</th>
+                <th>Reg No</th>
+                <th>Name of Student</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="js/finalscore.js"></script>
+</body>
+</html>

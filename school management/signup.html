@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/signup.js"></script>
+    <title>User Signup</title>
+</head>
+<body>
+    <div class="container">
+        <h2>User Signup</h2>
+        <?php if (!empty($success)): ?>
+            <div class="success"><?php echo $success; ?></div>
+        <?php endif; ?>
+        <form action="signup.php" method="POST">
+            <label for="LoginName">Login Name:</label>
+            <input type="text" id="LoginName" name="LoginName" required><br>
+
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" name="Password" required><br>
+            <!-- Display error message under password input -->
+            <?php if (!empty($error)): ?>
+                <div class="error"><?php echo $error; ?></div>
+            <?php endif; ?>
+
+            <label for="Rank">Select Rank:</label>
+            <select id="Rank" name="Rank" required>
+                <option value="Admin">Admin</option>
+                <option value="Form Teacher">Form Teacher</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Student">Student</option>
+            </select><br>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

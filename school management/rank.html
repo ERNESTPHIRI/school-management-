@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Ranking System</title>
+    <link rel="stylesheet" href="css/rank.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Ranking</h1>
+        <form id="rankForm">
+            <div class="form-group">
+                <label for="academicYear">Academic Year:</label>
+                <select id="academicYear" name="academicYear" required>
+                    <option value="">--Select Academic Year--</option>
+                    <option value="2024-2025">2024-2025</option>
+                    <option value="2025-2026">2025-2026</option>
+                    <option value="2026-2027">2026-2027</option>
+                    <!-- Add more years as needed -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="form">Form:</label>
+                <select id="form" name="form" required>
+                    <option value="">--Select Form--</option>
+                    <option value="1">Form 1</option>
+                    <option value="2">Form 2</option>
+                    <option value="3">Form 3</option>
+                    <option value="4">Form 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="term">Term:</label>
+                <select id="term" name="term" required>
+                    <option value="">--Select Term--</option>
+                    <option value="Term 1">Term 1</option>
+                    <option value="Term 2">Term 2</option>
+                    <option value="Term 3">Term 3</option>
+                </select>
+            </div>
+
+            <button type="submit">Rank Students</button>
+        </form>
+
+        <div id="result">
+            <!-- Ranked results will appear here -->
+        </div>
+
+        <button id="printBtn" style="display: none;">Print Results</button>
+    </div>
+
+    <script src="js/rank.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cascores.css">
+    <title>Continuous Assessment Scores</title>
+</head>
+<body>
+    <h1>Insert Continuous Assessment Scores</h1>
+
+    <!-- Form to retrieve the student -->
+    <form method="POST" id="studentForm">
+        <label for="academic_year">Academic Year:</label>
+        <select id="academicYr" name="academicYr" required>
+            <option value="2024-2025">2024-2025</option>
+            <option value="2025-2026">2025-2026</option>
+            <option value="2026-2027">2026-2027</option>
+            <option value="2027-2028">2027-2028</option>
+            <option value="2028-2029">2028-2029</option>
+            <option value="2029-2030">2029-2030</option>
+        </select>
+
+        <label for="term">Term:</label>
+        <select id="term" name="term" required>
+            <option value="Term 1">Term 1</option>
+            <option value="Term 2">Term 2</option>
+            <option value="Term 3">Term 3</option>
+        </select>
+
+        <label for="form">Select Form:</label>
+        <select name="form" id="form" required>
+            <option value="f1">Form 1</option>
+            <option value="f2">Form 2</option>
+            <option value="f3">Form 3</option>
+            <option value="f4">Form 4</option>
+        </select><br>
+
+        <label for="regNo">Enter Student RegNo:</label>
+        <input type="text" id="regNo" name="regNo" required><br>
+        
+        <br>
+        <button type="button" id="getStudentBtn">Get Student</button>
+    </form>
+
+    <!-- Container where the form to enter scores will be displayed -->
+    <div id="scoreFormContainer"></div>
+
+    <script>
+        document.getElementById('getStudentBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const academicYear = document.getElementById('academicYr').value;
+            const term = document.getElementById('term').value;
+            const form = document.getElementById('form').value;
+            const regNo = document.getElementById('regNo').value;
+
+            if (regNo.trim() === '') {
+                alert('Please enter the student registration number.');
+                return;
+            }
+
+            // Retrieve student and show form to enter CAT scores
+            fetch('cascores.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `academicYr=${encodeURIComponent(academicYear)}&term=${encodeURIComponent(term)}&form=${encodeURIComponent(form)}&regNo=${encodeURIComponent(regNo)}`
+            })
+            .then(response => response.text()) // Get the raw response text
+            .then(text => {
+                console.log('Raw response from server:', text); // Log the raw HTML or JSON response
+                
+                try {
+                    // Try to parse the response as JSON
+                    const data = JSON.parse(text);
+
+                    if (data.status === 'success') {
+                        const student = data.student;
+
+                        const subjects = [
+                            'Agriculture', 'Additional Mathematics', 'Biology', 'Business Studies', 
+                            'Computer Studies', 'Chichewa', 'Chemistry', 'English', 
+                            'Geography', 'History', 'Life Skills', 'Mathematics', 
+                            'Social Studies', 'Physics', 'Home Economics'
+                        ];
+
+                        // Create the form to enter scores
+                        let scoreFormHtml = `<h2>Enter Scores for Student: ${student.fullName} (RegNo: ${student.regNo})</h2>`;
+                        scoreFormHtml += `<form method="POST" action="insertCat.php">`; // Corrected form action
+                        scoreFormHtml += `<input type="hidden" name="regNo" value="${student.regNo}">`;
+                        scoreFormHtml += `<input type="hidden" name="academicYr" value="${academicYear}">`;
+                        scoreFormHtml += `<input type="hidden" name="term" value="${term}">`;
+                        scoreFormHtml += `<input type="hidden" name="form" value="${form}">`;
+
+                        scoreFormHtml += `<label for="subject">Select Subject:</label>`;
+                        scoreFormHtml += `<select name="subject" required>`;
+                        subjects.forEach(subject => {
+                            scoreFormHtml += `<option value="${subject}">${subject}</option>`;
+                        });
+                        scoreFormHtml += `</select><br>`;
+
+                        scoreFormHtml += `<label for="score">Enter CAT Score:</label>`;
+                        scoreFormHtml += `<input type="number" step="0.01" name="score" required><br>`;
+
+                        scoreFormHtml += `<button type="submit">Submit Score</button></form>`;
+                        document.getElementById('scoreFormContainer').innerHTML = scoreFormHtml; // Update the container with the form
+                    } else {
+                        alert(data.message);
+                    }
+                } catch (e) {
+                    // If parsing fails, log the error and show the raw text
+                    console.error('Error parsing JSON:', e);
+                    alert('An error occurred. Raw response: ' + text);
+                }
+            })
+            .catch(error => {
+                // Display error on the page
+                const errorContainer = document.createElement('div');
+                errorContainer.style.color = 'red';
+                errorContainer.innerHTML = `<strong>An error occurred:</strong> ${error.message}`;
+                document.body.appendChild(errorContainer);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formteacher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/viewstudents.css">
+    <title>View Students</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Form Teacher</h2>
+        </div>
+        <ul class="menu-list">
+            <li>
+                <a href="formteacher.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="viewstudents.html">
+                    <i class="fas fa-users"></i>
+                    <span>Manage Classes</span>
+                </a>
+            </li>
+            <li>
+                <a href="registration.html"> 
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Register Student</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="performanceLink">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Performance</span>
+                </a>
+            </li>
+            <li>
+                <a href="rank.html" id="communicationLink">
+                    <i class="fas fa-envelope"></i>
+                    <span>Rank student</span>
+                </a>
+            </li>
+            <li>
+                <a href="studentreport.html" id="resourcesLink">
+                    <i class="fas fa-book"></i>
+                    <span>Student School Report</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>View Students</h1>
+
+        <!-- Form for selecting form, term, and academic year -->
+        <form id="viewStudentsForm" method="POST">
+            <div class="form-group">
+                <label for="form">Select Form:</label>
+                <select id="form" name="form" required>
+                    <option value="Form 1">Form 1</option>
+                    <option value="Form 2">Form 2</option>
+                    <option value="Form 3">Form 3</option>
+                    <option value="Form 4">Form 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="term">Select Term:</label>
+                <select id="term" name="term" required>
+                    <option value="Term 1">Term 1</option>
+                    <option value="Term 2">Term 2</option>
+                    <option value="Term 3">Term 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="academicYr">Select Academic Year:</label>
+                <select id="academicYr" name="academicYr" required>
+                    <option value="2024-2025">2024-2025</option>
+                    <option value="2025-2026">2025-2026</option>
+                    <option value="2026-2027">2026-2027</option>
+                    <option value="2027-2028">2027-2028</option>
+                    <option value="2028-2029">2028-2029</option>
+                </select>
+            </div>
+
+            <button type="submit">View Students</button>
+        </form>
+
+        <!-- Section to display the student data -->
+        <div id="studentList">
+            <h2>Student List</h2>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Reg No</th>
+                        <th>Full Name</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Guardian</th>
+                        <th>Postal Address</th>
+                        <th>Physical Address</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student data will be populated here -->
+                </tbody>
+            </table>
+            <button id="printToPDF">Print to PDF</button>
+        </div>
+    </div>
+
+    <!-- Form for editing student details -->
+    <div id="editStudentFormContainer" style="display: none;">
+        <h2>Edit Student Details</h2>
+        <form id="editStudentForm">
+            <input type="hidden" id="editRegNo">
+            <div class="form-group">
+                <label for="editFullName">Full Name:</label>
+                <input type="text" id="editFullName" required>
+            </div>
+            <div class="form-group">
+                <label for="editDOB">DOB:</label>
+                <input type="date" id="editDOB" required>
+            </div>
+            <div class="form-group">
+                <label for="editGender">Gender:</label>
+                <select id="editGender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editPhone">Phone:</label>
+                <input type="text" id="editPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="editGuardian">Guardian:</label>
+                <input type="text" id="editGuardian" required>
+            </div>
+            <div class="form-group">
+                <label for="editAddress1">Postal Address:</label>
+                <input type="text" id="editAddress1" required>
+            </div>
+            <div class="form-group">
+                <label for="editAddress2">Physical Address:</label>
+                <input type="text" id="editAddress2">
+            </div>
+            <div class="form-group">
+                <label for="editForm">Form:</label>
+                <select id="editForm" required>
+                    <option value="Form 1">Form 1</option>
+                    <option value="Form 2">Form 2</option>
+                    <option value="Form 3">Form 3</option>
+                    <option value="Form 4">Form 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editTerm">Term:</label>
+                <select id="editTerm" required>
+                    <option value="Term 1">Term 1</option>
+                    <option value="Term 2">Term 2</option>
+                    <option value="Term 3">Term 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editAcademicYr">Academic Year:</label>
+                <select id="editAcademicYr" required>
+                    <option value="2024-2025">2024-2025</option>
+                    <option value="2025-2026">2025-2026</option>
+                    <option value="2026-2027">2026-2027</option>
+                    <option value="2027-2028">2027-2028</option>
+                    <option value="2028-2029">2028-2029</option>
+                </select>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <script src="js/viewstudents.js"></script>
+</body>
+
+</html>
